@@ -1,8 +1,6 @@
-
+st.set_page_config(page_title="Elytrix", layout="wide", initial_sidebar_state="auto")
 import streamlit as st
 from dashboard import dashboard_ui, home_ui
-
-st.set_page_config(page_title="Elytrix", layout="wide", initial_sidebar_state="auto")
 
 with open("dashboard/assets/elytrix_logo.png", "rb") as logo_file:
     st.sidebar.image(logo_file.read(), width=80)
