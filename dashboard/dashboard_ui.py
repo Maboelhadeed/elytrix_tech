@@ -4,6 +4,8 @@ import pandas as pd
 import os
 from bot_engine.bot_ui import render_bot_controls
 from market.market_ui import render_market_feed
+from market.crypto_prices import render_crypto_prices
+render_crypto_prices()
 
 def render_dashboard():
     st.markdown("##")
