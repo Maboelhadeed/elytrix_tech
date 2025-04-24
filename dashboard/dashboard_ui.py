@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import os
 from bot_engine.bot_ui import render_bot_controls
+from market.market_ui import render_market_feed
 
 def render_dashboard():
     st.markdown("##")
@@ -23,11 +24,5 @@ def render_dashboard():
 
     st.markdown("---")
     render_bot_controls()
-
-    st.subheader("Strategy Performance")
-    data = pd.DataFrame({
-        "AI Adaptive": pd.Series([10, 12, 11, 13]),
-        "Scalping": pd.Series([5, 7, 6, 8]),
-        "Sniper": pd.Series([2, 4, 5, 6]),
-    })
-    st.line_chart(data)
+    st.markdown("---")
+    render_market_feed()
