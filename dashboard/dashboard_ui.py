@@ -1,6 +1,8 @@
+
 import streamlit as st
 import pandas as pd
 import os
+from bot_engine.bot_ui import render_bot_controls
 
 def render_dashboard():
     st.markdown("##")
@@ -9,7 +11,6 @@ def render_dashboard():
 
     st.markdown("<h2 style='color:#1E90FF;'>Elytrix Dashboard</h2>", unsafe_allow_html=True)
     st.markdown("<p style='font-style: italic; color: #999;'>Precision Wins.</p>", unsafe_allow_html=True)
-
     st.markdown("---")
 
     col1, col2, col3 = st.columns(3)
@@ -21,6 +22,8 @@ def render_dashboard():
         st.metric("Bot Status", "Running")
 
     st.markdown("---")
+    render_bot_controls()
+
     st.subheader("Strategy Performance")
     data = pd.DataFrame({
         "AI Adaptive": pd.Series([10, 12, 11, 13]),
